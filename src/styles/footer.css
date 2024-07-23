@@ -1,0 +1,28 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 64px;
+    background-color: #EAEAEA;
+    box-shadow: #00000027;
+}
+
+.footerLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 8px;
+}
+
+.footerLinks > a{
+    align-self: end;
+}
+
+.copyContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 0;
+}
