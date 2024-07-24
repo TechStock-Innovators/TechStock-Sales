@@ -1,30 +1,13 @@
 <?php
-$config = parse_ini_file("./.ini", true);
+global $config;
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStock</title>
-    <link rel="stylesheet" href="./src/styles/globals.css">
-    <link rel="stylesheet" href="./src/styles/header.css">
-    <link rel="stylesheet" href="./src/styles/footer.css">
-    <link rel="stylesheet" href="./src/styles/home.css">
-
-    <!-- choose one -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-</head>
-<body>
-    <?php include "./src/components/header.php";?>
-    <section class="section1">
+<section class="section1">
         <div class="section1texto">
             <h1>Bem-Vindo ao TeckStock</h1>
             <h5>Sua plataforma completa para suporte técnico e controle de ativos.</h5>
             <a class="btn" href="#">Experimente Agora</a>
         </div>
-        <img src="<?= $config["FILES"]["IMAGES"]; ?>\imagem1.png" alt="Homem no PC">
+        <img src="<?= $config["FILES"]["IMAGES"]; ?>imagem1.png" alt="Homem no PC">
     </section>
     <div class="divisao"></div>
     <section class="section2">
@@ -40,7 +23,7 @@ $config = parse_ini_file("./.ini", true);
                 </ul>
             </div>
         </div>
-        <img class="section2imagem" src="<?= $config["FILES"]["IMAGES"]; ?>\imagem2.png" alt="Homem no PC">
+        <img class="section2imagem" src="<?= $config["FILES"]["IMAGES"]; ?>imagem2.png" alt="Homem no PC">
     </section>
     <div class="divisao"></div>
     <section class="section3">
@@ -76,7 +59,7 @@ $config = parse_ini_file("./.ini", true);
         </form>
     </section>
     
-    <?php include "./src/components/footer.php";?>
+    
     <script>
         feather.replace();
         
@@ -90,5 +73,3 @@ $config = parse_ini_file("./.ini", true);
             })
         });
     </script>
-</body>
-</html>

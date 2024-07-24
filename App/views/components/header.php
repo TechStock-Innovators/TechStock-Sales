@@ -1,7 +1,7 @@
 <?php global $config; ?>
 <header>
     <div class="logo">
-        <img src="<?= $config["FILES"]["IMAGES"]; ?>\Logo 2.png" alt="Logo maneira" />
+        <img src="<?= $config["FILES"]["IMAGES"]; ?>Logo 2.png" alt="Logo maneira" />
         <h3>TechStock</h3>
     </div>
 
