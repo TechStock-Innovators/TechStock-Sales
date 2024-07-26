@@ -1,0 +1,13 @@
+[DB]
+NAME = '';
+USER = '';
+PASSWORD = '';
+HOST = '';
+PORT = ;
+
+[FILES]
+IMAGES=
+
+[APP]
+USER=
+PASSWORD=
