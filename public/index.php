@@ -1,19 +1,24 @@
-<?php global $config; ?>
+<?php global $config; session_start();?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <title>TechStock</title>
-    
-    <link rel="stylesheet" href="/styles/globals.css">
-    <link rel="stylesheet" href="/styles/header.css">
-    <link rel="stylesheet" href="/styles/footer.css">
-    <link rel="stylesheet" href="/styles/home.css">
+    <?php
+      $path = "styles/";
+      $diretorio = dir($path);
+      while($arquivo = $diretorio->read()){
+        echo '<link rel="stylesheet" href=/'.$path.$arquivo.'>';
+      }
+      $diretorio->close();
+    ?>
+
     <link rel="icon" href="/assets/Logo 2.png">
     <!-- choose one -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   </head>
   <body>
+    
     <?php 
     require '../App/autoload.php';
     

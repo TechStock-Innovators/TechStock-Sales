@@ -7,15 +7,25 @@ use App\models\Users;
 
 class Authenticator extends Helpers
 {
-    public function validate(string $user, string $password = "")
+    public function validate(string $user, string $password)
     {
         $Users = $this->model("Users");
-        $user = $Users::findByUser($user);
-        if($user[0]["password"] == $password)
+        $userDB = $Users::findByUser($user);
+        if($userDB != null and $userDB[0]["password"] == $password)
         {
             return true;
         }
         return false;
+    }
+
+    public function usuarioLogado()
+    {
+        return isset($_SESSION["userName"]);
+    }
+
+    public function gravaSessao(string $nome)
+    {
+        $_SESSION["userName"] = $nome;
     }
 }
 
