@@ -15,12 +15,6 @@ header{
     gap: 38px;
 }
 
-.btn{
-    padding: 11px 28px;
-    background-color: #2E86C1;
-    border-radius: 16px;
-}
-
 .logo{
     display: flex;
     flex-direction: row;
@@ -38,4 +32,10 @@ header{
     flex-direction: row;
     align-items: baseline;
     gap: 4px;
+}
+
+.btn.btn-logo{
+    background-color: transparent;
+    border: none;
+    padding: 12px;
 }

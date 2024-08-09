@@ -22,8 +22,10 @@ class Controller
         $this->view('erro404');
     }
 
-    public function redirect(string $route)
+    public function redirect(string $controller, $method="index", $args = array())
     {
-        header('Location: /' . $route);
+        $location = 'localhost:8085' . "/" . $controller . "/" . $method . "/" . implode("/",$args);
+
+        header('Location: http://' . $location);
     }
 }

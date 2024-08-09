@@ -12,6 +12,16 @@ class Sales extends Controller
     {
         return $this->view("Login/index");
     }
+    
+    public function contatos()
+    {
+        return $this->view("Sales/UsersList");
+    }
+    
+    public function usuarios()
+    {
+        return $this->redirect("User");
+    }
 
     public function __construct()
     {
@@ -22,7 +32,7 @@ class Sales extends Controller
     {
         if($this->Auth->validate($_POST["user"], $_POST["senha"])) {
             $this->Auth->gravaSessao($_POST["user"]);
-            $this->redirect("Sales/dashboard");
+            $this->redirect("Sales", "dashboard");
         } else {
             $error = "MENSAGEM";
             return $this->view("Login/index", $error);

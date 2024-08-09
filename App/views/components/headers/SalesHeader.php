@@ -13,7 +13,7 @@
 
     <div class="menuLinks">
         <div><?= $userName ?></div>
-        <button id="logout" class=""><i data-feather="log-out"></i></button>
+        <button id="logout" class="btn btn-logo"><i data-feather="log-out"></i></button>
         
     </div>
 </header>

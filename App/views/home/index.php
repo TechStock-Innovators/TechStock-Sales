@@ -1,8 +1,5 @@
 <?php
 global $config;
-use App\helpers\Authenticator;
-$r = new Authenticator();
-$r->validate("kylejimenez");
 ?>
 
 <?php require '../App/views/components/headers/LPheader.php'; ?>
@@ -11,7 +8,7 @@ $r->validate("kylejimenez");
     <div class="section1texto">
         <h1>Bem-Vindo ao TeckStock</h1>
         <h5>Sua plataforma completa para suporte técnico e controle de ativos.</h5>
-        <a class="btn" href="#">Experimente Agora</a>
+        <a class="btn btn-primary" href="#">Experimente Agora</a>
     </div>
     <img src="<?= $config["FILES"]["IMAGES"]; ?>imagem1.png" alt="Homem no PC">
 </section>
@@ -61,7 +58,7 @@ $r->validate("kylejimenez");
             <i data-feather="edit"></i>
             <input class="inputContatojs" type="text" name="mensagem" placeholder="Mensagem...">
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </section>
 
