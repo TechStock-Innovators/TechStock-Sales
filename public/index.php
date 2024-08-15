@@ -25,6 +25,11 @@
   <body>
     
     <?php 
+    try {
+      //code...
+    } catch (\Throwable $th) {
+      //throw $th;
+    }
     require '../App/autoload.php';
     
     use App\core\App;

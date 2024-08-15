@@ -2,6 +2,7 @@
 
 use App\core\Controller;
 use App\models\Users;
+use App\models\Messages;
 use App\helpers\Authenticator;
 
 class Sales extends Controller
@@ -15,7 +16,10 @@ class Sales extends Controller
     
     public function contatos()
     {
-        return $this->view("Sales/UsersList");
+        $Mensagens = $this->model('Mensagens');
+        $data = $Mensagens::findAll();
+
+        return $this->view("Sales/ContactsList", ['mensagens'=> $data]);
     }
     
     public function usuarios()
