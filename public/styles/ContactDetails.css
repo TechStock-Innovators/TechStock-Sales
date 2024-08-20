@@ -1,0 +1,15 @@
+.containerPrincipal.contatos{
+    display: block;
+}
+
+.columns.contatos{
+    display: flex;
+    flex-direction: row;
+}
+
+.columns.contatos > section{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 8px;
+}

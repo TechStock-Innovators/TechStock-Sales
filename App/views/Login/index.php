@@ -3,7 +3,7 @@ global $config;
 
 ?>
 
-<?php require '../App/views/components/headers/SalesHeader.php'; ?>
+<?php require '../App/views/components/headers/LoginHeader.php'; ?>
 <form id="123" class="logincontainer" method="POST" action="/sales/logon">
     <h2>Bem Vindo à TechStock</h2>
     <hr>

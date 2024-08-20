@@ -47,4 +47,12 @@ class Sales extends Controller
     {
         return $this->view("Sales/index");
     }
+
+    public function editar($id)
+    {
+        $Mensagens = $this->model('Mensagens');
+        $data = $Mensagens::findById($id);
+
+        return $this->view("Sales/ContactDetails", ["data" => $data[0]]);
+    }
 }
