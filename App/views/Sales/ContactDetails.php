@@ -5,7 +5,7 @@
 
 <?php require '../App/views/components/headers/SalesHeader.php'; ?>
 
-<form class="containerPrincipal contatos" action="/User/salvar" method="POST">
+<form class="containerPrincipal contatos" action="/Sales/salvar/<?= $data['data']['id'] ?>" method="POST">
     <h2>Mensagem Nº <?= $data['data']['id'] ?></h2>
     <div class="columns contatos">
         <section>
@@ -21,11 +21,11 @@
         </section>
         <section>
             <div class="form-group">
-                <textarea type="text" placeholder=" " id="permissao" name="permissao"></textarea>
+                <textarea type="text" placeholder=" " id="permissao" name="observacoes"></textarea>
                 <label for="permissao">Observações</label>
             </div>
             <div class="form-group">
-                <textarea type="text" placeholder=" " id="setor" name="setor"></textarea>
+                <textarea type="text" placeholder=" " id="setor" name="feedback"></textarea>
                 <label for="setor">Feedback</label>
             </div>
         </section>

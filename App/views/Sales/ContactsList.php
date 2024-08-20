@@ -3,12 +3,11 @@
 ?>
 
 <?php require '../App/views/components/headers/SalesHeader.php'; ?>
-
 <div class="containerTopo">
     <h3>Mensagens</h3>
     <div>
         <button class="btn btn-transparente"><i data-feather="filter"></i></button>
-        <a href="/User/novoUsuario" class="btn btn-grey"><i data-feather="refresh-cw"></i>Atualizar</a>
+        <a href="/Sales/contatos" class="btn btn-grey"><i data-feather="refresh-cw"></i>Atualizar</a>
     </div>
 </div>
 
@@ -33,9 +32,8 @@
                     <td><?= $linha["email"] ?></td>
                     <td><?= $linha["mensagem"] ?></td>
                     <td><?= $linha["tentativas"] ?></td>
-                    <!-- <td><?= $linha["created_at"] ?></td> -->
                     <td class="tableMenu">
-                        <button onclick="updateUser(<?= $linha['id'] ?>)" class="btn btn-transparente"><i data-feather="edit"></i></button>
+                        <button onclick="updateMessage(<?= $linha['id'] ?>)" class="btn btn-transparente"><i data-feather="edit"></i></button>
                         <button onclick="deleteUser(<?= $linha['id'] ?>)" class="btn btn-transparente"><i data-feather="trash-2"></i></button>
                     </td>
                 </tr>
@@ -49,13 +47,13 @@
         let confirmacao = confirm(`Deseja deletar a mensagem numero ${id}?`)
         if(confirmacao){
             console.log(`deletando o ${id}`)
-            fetch(`/User/delete/${id}`)
+            fetch(`/Sales/delete/${id}`)
                 .then(window.location.assign(""))
         }
     }
 
-    function updateUser(id) {
-        window.location.pathname = `User/editar/${id}`
+    function updateMessage(id) {
+        window.location.pathname = `Sales/editar/${id}`
     }
 
     <?php if(isset($data["notify"])) { ?>

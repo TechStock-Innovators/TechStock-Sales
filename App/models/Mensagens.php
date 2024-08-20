@@ -3,7 +3,7 @@
 namespace App\models;
 
 use App\core\Database;
-use App\models\DataObjects\User;
+use App\models\DataObjects\Mensagem;
 use PDO;
 
 class Mensagens
@@ -40,40 +40,40 @@ class Mensagens
   }
   
   
-  public static function insertMessagem(User $user)
+  public static function insertMessagem(Mensagem $mensagem)
   {
     $conn = new Database();
-    $result = $conn->executeQuery('INSERT INTO mensagens (user, password, name, email, permission, section) 
-                                    VALUES (:USER, :PASSWORD, :NAME, :EMAIL, :PERMISSION, :SECTION)', 
+    $result = $conn->executeQuery('INSERT INTO mensagens (name, email, mensagem) 
+                                    VALUES (:NAME, :EMAIL, :MENSAGEM)', 
     array(
-      ':USER' => $user->user,
-      ':PASSWORD' => $user->password,
-      ':NAME' => $user->name,
-      ':EMAIL' => $user->email,
-      ':PERMISSION' => $user->permission,
-      ':SECTION' => $user->section,
+      ':NAME' => $mensagem->name,
+      ':EMAIL' => $mensagem->email,
+      ':MENSAGEM' => $mensagem->mensagem
+    ));
+
+    return $result;
+  }
+  
+  public static function insertMessageUpdate($id, $feedback, $observacoes)
+  {
+    $conn = new Database();
+    $result = $conn->executeQuery('UPDATE mensagens SET 
+                                    feedback = :FEEDBACK,
+                                    observacoes = :OBSERVACOES
+                                    WHERE id = :ID', 
+    array(
+      ':ID' => $id,
+      ':FEEDBACK' => $feedback,
+      ':OBSERVACOES' => $observacoes
     ));
 
     return $result;
   }
 
-  public static function updateByMensagem(User $user)
+  public static function deleteById(int $id)
   {
     $conn = new Database();
-    $result = $conn->executeQuery('UPDATE users SET user = :USER, password = :PASSWORD, nome = :NAME WHERE id = :ID', array(
-      ':ID' => $user->id,
-      ':USER' => $user->user,
-      ':PASSWORD' => $user->password,
-      ':NAME' => $user->name
-    ));
-
-    return $result;
-  }
-
-  public static function deleteByUser(int $id)
-  {
-    $conn = new Database();
-    $result = $conn->executeQuery('DELETE FROM users WHERE id = :ID', array(
+    $result = $conn->executeQuery('DELETE FROM mensagens WHERE id = :ID', array(
       ':ID' => $id
     ));
 

@@ -55,4 +55,59 @@ class Sales extends Controller
 
         return $this->view("Sales/ContactDetails", ["data" => $data[0]]);
     }
+
+    public function delete($id)
+    {
+        $Mensagens = $this->model('Mensagens');
+        try {
+          $data = $Mensagens::deleteById($id);
+    
+          $data = $Mensagens::findAll();
+          $this->view('Sales/ContactsList', [
+            'mensagens' => $data, 
+            'notify' => [
+              'type' => 'success',
+              'message' => 'Mensagens removido com sucesso!'
+            ]
+          ]);
+        } catch (\Throwable $th) {
+          $data = $Mensagens::findAll();
+          $this->view('Sales/ContactsList', [
+            'mensagens' => $data, 
+            'notify' => [
+              'type' => 'error',
+              'message' => 'Falha ao remover Mensagens, tente novamente.'
+            ]
+          ]);
+        }
+      }
+
+    public function salvar($id)
+    {
+        $feedback = $_POST["feedback"];
+        $observacoes = $_POST["observacoes"];
+
+        $Mensagens = $this->model('Mensagens');
+        try {
+            $Mensagens::insertMessageUpdate($id, $feedback, $observacoes);
+      
+            $data = $Mensagens::findAll();
+            $this->view('Sales/ContactsList', [
+              'mensagens' => $data, 
+              'notify' => [
+                'type' => 'success',
+                'message' => 'Mensagem salva com sucesso!'
+              ]
+            ]);
+          } catch (\Throwable $th) {
+            $data = $Mensagens::findAll();
+            $this->view('Sales/ContactsList', [
+              'mensagens' => $data, 
+              'notify' => [
+                'type' => 'error',
+                'message' => 'Falha ao salvar Mensagem, tente novamente.'
+              ]
+            ]);
+          }
+    }
 }

@@ -76,7 +76,11 @@ class Users
   public static function updateByUser(User $user)
   {
     $conn = new Database();
-    $result = $conn->executeQuery('UPDATE users SET user = :USER, password = :PASSWORD, nome = :NAME WHERE id = :ID', array(
+    $result = $conn->executeQuery('UPDATE users SET 
+                                    user = :USER, 
+                                    password = :PASSWORD, 
+                                    nome = :NAME 
+                                    WHERE id = :ID', array(
       ':ID' => $user->id,
       ':USER' => $user->user,
       ':PASSWORD' => $user->password,
