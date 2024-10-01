@@ -14,19 +14,21 @@ global $config;
 </section>
 <div class="divisao"></div>
 <section class="section2">
-    <div class="section2textocontainer">
-        <div class="section2texto">
-            <h2 style="font-weight: 500;">Por que escolher a TechStock?</h2>
-            <br>
-            <ul>
-                <li><b>Suporte Rápido e Eficiente: </b>"Resolvemos seus problemas técnicos de forma rápida e eficiente, garantindo que você possa focar no que realmente importa."</li>
-                <li><b>Monitoramento em Tempo Real: </b>"Mantenha o controle total de sua infraestrutura de TI com nosso sistema de monitoramento contínuo."</li>
-                <li><b>Portal de Autoatendimento: </b>"Acesso fácil a tutoriais, FAQs e guias para resolver problemas comuns de maneira independente."</li>
-                <li><b>Relatórios Detalhados: </b>"Gere relatórios completos para análise de desempenho e identificação de áreas de melhoria."</li>
-            </ul>
+    <div>
+        <div class="section2textocontainer">
+            <div class="section2texto">
+                <h2 style="font-weight: 500;">Por que escolher a TechStock?</h2>
+                <br>
+                <ul>
+                    <li><b>Suporte Rápido e Eficiente: </b>"Resolvemos seus problemas técnicos de forma rápida e eficiente, garantindo que você possa focar no que realmente importa."</li>
+                    <li><b>Monitoramento em Tempo Real: </b>"Mantenha o controle total de sua infraestrutura de TI com nosso sistema de monitoramento contínuo."</li>
+                    <li><b>Portal de Autoatendimento: </b>"Acesso fácil a tutoriais, FAQs e guias para resolver problemas comuns de maneira independente."</li>
+                    <li><b>Relatórios Detalhados: </b>"Gere relatórios completos para análise de desempenho e identificação de áreas de melhoria."</li>
+                </ul>
+            </div>
         </div>
+        <img class="section2imagem" src="<?= $config["FILES"]["IMAGES"]; ?>imagem2.png" alt="Homem no PC">
     </div>
-    <img class="section2imagem" src="<?= $config["FILES"]["IMAGES"]; ?>imagem2.png" alt="Homem no PC">
 </section>
 <div class="divisao"></div>
 <section class="section3">

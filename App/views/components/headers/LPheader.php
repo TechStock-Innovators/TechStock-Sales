@@ -8,6 +8,6 @@
     <div class="menuLinks">
         <a href="/sobre">Sobre</a>
         <a href="/recursos">Recursos</a>
-        <a class="btn" href="/app/login">Entrar</a>
+        <a class="btn" href="http://localhost:3000/">Entrar</a>
     </div>
 </header>

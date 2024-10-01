@@ -1,12 +1,13 @@
-section{
+/* section{
     width: 100%;
-}
+} */
 
 .section1{
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .section1texto{
@@ -19,17 +20,22 @@ section{
 
 .section2{
     height: 720px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section2 > div{
+    max-width: 1440px;
 }
 
 .section2textocontainer{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
     position: absolute;
     height: 720px;
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
     z-index: 1;
+    align-items: center;
 }
 
 .section2texto{
@@ -42,9 +48,7 @@ section{
 }
 
 .section2imagem{
-    position: absolute;
     z-index: 0;
-    right: 0;
 }
 
 .divisao{
